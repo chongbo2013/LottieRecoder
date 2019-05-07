@@ -1,7 +1,14 @@
 package com.yy.lottierecoder;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.SurfaceTexture;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.Nullable;
 import android.view.Surface;
+import android.view.View;
+
+import com.airbnb.lottie.LottieAnimationView;
 import com.airbnb.lottie.LottieComposition;
 import com.airbnb.lottie.LottieCompositionFactory;
 import com.airbnb.lottie.LottieDrawable;
@@ -12,35 +19,40 @@ import com.airbnb.lottie.LottieResult;
  * 创建日期：2019/5/7
  * 描述：
  */
-public class OffscreenAfterEffectView implements IGLView{
+public class OffscreenAfterEffectView extends View implements IGLView, Drawable.Callback {
     private final LottieDrawable lottieDrawable = new LottieDrawable();
     Context context;
     public OffscreenAfterEffectView(Context context) {
+        super(context);
         this.context=context;
     }
     private GLViewHelper mGLViewHelper = new GLViewHelper();
     public boolean load() {
         clearComposition();
-        LottieResult<LottieComposition> result = LottieCompositionFactory.fromAssetSync(context, "biao.json");
+        lottieDrawable.setImagesAssetsFolder("images");
+        lottieDrawable.setCallback(this);
+        LottieResult<LottieComposition> result = LottieCompositionFactory.fromAssetSync(context, "kuaijian.json");
         if (result.getValue() != null) {
             lottieDrawable.setComposition(result.getValue());
             lottieDrawable.setBounds(0,0,result.getValue().getBounds().width(),result.getValue().getBounds().height());
-            setProgress(0.0f);
         }
         return result.getValue() != null;
     }
 
-
-    protected void onDraw(Canvas canvas) {
-        if(lottieDrawable!=null) {
-            lottieDrawable.draw(canvas);
-        }
+    public Bitmap updateBitmap(String id, @Nullable Bitmap bitmap) {
+        return lottieDrawable.updateBitmap(id, bitmap);
     }
 
+    public void setSize(int w,int h){
+        if(lottieDrawable!=null)
+        lottieDrawable.setBounds(0,0,w,h);
+    }
     public void draw() {
         Canvas surfaceCanvas = mGLViewHelper.drawStart(null);
         if (surfaceCanvas != null) {
-            onDraw(surfaceCanvas);
+            if(lottieDrawable!=null) {
+                lottieDrawable.draw(surfaceCanvas);
+            }
             mGLViewHelper.drawEnd(surfaceCanvas);
         }
     }
@@ -49,25 +61,22 @@ public class OffscreenAfterEffectView implements IGLView{
         lottieDrawable.clearComposition();
     }
 
-    @Override
-    public int getWidth() {
-        if(lottieDrawable!=null)
-        return lottieDrawable.getIntrinsicWidth();
-        return 0;
-    }
 
-    @Override
-    public int getHeight() {
-        if(lottieDrawable!=null)
-        return lottieDrawable.getIntrinsicHeight();
-        return 0;
-    }
 
     @Override
     public void setSurface(Surface surface) {
         mGLViewHelper.setSurface(surface);
     }
 
+    /**
+     * 设置surface大小
+     * @param surfaceTexture
+     */
+    public void setDefaultBufferSize(SurfaceTexture surfaceTexture){
+        if(lottieDrawable==null)
+            return;
+        surfaceTexture.setDefaultBufferSize(getWidth(), getHeight());
+    }
     @Override
     public void setGLEnvironment(IGLEnvironment render) {
         mGLViewHelper.setGLEnvironment(render);
@@ -81,7 +90,22 @@ public class OffscreenAfterEffectView implements IGLView{
     public void setProgress(float progress) {
         if(lottieDrawable!=null) {
             lottieDrawable.setProgress(progress);
-            draw();
         }
+        draw();
+    }
+
+    @Override
+    public void invalidateDrawable( Drawable who) {
+
+    }
+
+    @Override
+    public void scheduleDrawable( Drawable who, Runnable what, long when) {
+
+    }
+
+    @Override
+    public void unscheduleDrawable( Drawable who,  Runnable what) {
+
     }
 }

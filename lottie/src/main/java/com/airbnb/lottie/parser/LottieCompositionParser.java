@@ -26,6 +26,7 @@ public class LottieCompositionParser {
   private LottieCompositionParser() {}
 
   public static LottieComposition parse(JsonReader reader) throws IOException {
+//    float scale = Utils.dpScale();
     float scale = Utils.dpScale();
     float startFrame = 0f;
     float endFrame = 0f;

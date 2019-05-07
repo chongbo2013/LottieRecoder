@@ -208,8 +208,10 @@ public final class Utils {
     }
     return result;
   }
-
+  public static boolean NOT_SCALE=false;
   public static float dpScale() {
+    if(NOT_SCALE)
+      return 1.0f;
     if (dpScale == -1) {
       dpScale = Resources.getSystem().getDisplayMetrics().density;
     }
