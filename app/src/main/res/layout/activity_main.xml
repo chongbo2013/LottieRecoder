@@ -1,35 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
-
-
-
-    <TextureView
-        android:id="@+id/textureView"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        />
-    <com.airbnb.lottie.LottieAnimationView
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:visibility="gone"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="kuaijian.json"
+            app:lottie_imageAssetsFolder="images"
+            app:lottie_loop="true" />
+
+
+        <Button
+            android:id="@+id/btn_recoder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开始渲染lottie" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_dialog_progress"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        app:lottie_fileName="kuaijian.json"
-        app:lottie_imageAssetsFolder="images"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        android:visibility="gone"/>
-    <Button
-        android:id="@+id/btn_refresh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="刷新"/>
-    <Button
-        android:id="@+id/btn_recoder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="录制"/>
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:background="#30000000"
+        android:visibility="gone">
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerInParent="true"/>
+        <TextView
+            android:id="@+id/tv_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="处理中0%"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/progressBar"
+            android:background="@android:color/white"/>
+    </RelativeLayout>
+</FrameLayout>

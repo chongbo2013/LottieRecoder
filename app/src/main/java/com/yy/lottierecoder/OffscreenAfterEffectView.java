@@ -1,18 +1,23 @@
 package com.yy.lottierecoder;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.SurfaceTexture;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.annotation.Nullable;
 import android.view.Surface;
 import android.view.View;
 
-import com.airbnb.lottie.LottieAnimationView;
 import com.airbnb.lottie.LottieComposition;
 import com.airbnb.lottie.LottieCompositionFactory;
 import com.airbnb.lottie.LottieDrawable;
 import com.airbnb.lottie.LottieResult;
+import com.yy.lottierecoder.encoders.DefaultLottieRender;
+import com.yy.lottierecoder.encoders.LottieSurfaceTexture;
 
 /**
  * @author ferrisXu
@@ -26,7 +31,10 @@ public class OffscreenAfterEffectView extends View implements IGLView, Drawable.
         super(context);
         this.context=context;
     }
+
     private GLViewHelper mGLViewHelper = new GLViewHelper();
+    private DefaultLottieRender mSurfaceRender;
+    LottieSurfaceTexture lottieSurfaceTexture;
     public boolean load() {
         clearComposition();
         lottieDrawable.setImagesAssetsFolder("images");
@@ -35,6 +43,7 @@ public class OffscreenAfterEffectView extends View implements IGLView, Drawable.
         if (result.getValue() != null) {
             lottieDrawable.setComposition(result.getValue());
             lottieDrawable.setBounds(0,0,result.getValue().getBounds().width(),result.getValue().getBounds().height());
+
         }
         return result.getValue() != null;
     }
@@ -43,10 +52,6 @@ public class OffscreenAfterEffectView extends View implements IGLView, Drawable.
         return lottieDrawable.updateBitmap(id, bitmap);
     }
 
-    public void setSize(int w,int h){
-        if(lottieDrawable!=null)
-        lottieDrawable.setBounds(0,0,w,h);
-    }
     public void draw() {
         Canvas surfaceCanvas = mGLViewHelper.drawStart(null);
         if (surfaceCanvas != null) {
@@ -68,15 +73,7 @@ public class OffscreenAfterEffectView extends View implements IGLView, Drawable.
         mGLViewHelper.setSurface(surface);
     }
 
-    /**
-     * 设置surface大小
-     * @param surfaceTexture
-     */
-    public void setDefaultBufferSize(SurfaceTexture surfaceTexture){
-        if(lottieDrawable==null)
-            return;
-        surfaceTexture.setDefaultBufferSize(getWidth(), getHeight());
-    }
+
     @Override
     public void setGLEnvironment(IGLEnvironment render) {
         mGLViewHelper.setGLEnvironment(render);
@@ -107,5 +104,56 @@ public class OffscreenAfterEffectView extends View implements IGLView, Drawable.
     @Override
     public void unscheduleDrawable( Drawable who,  Runnable what) {
 
+    }
+
+    public int getLottieWidth() {
+        if(lottieDrawable!=null) {
+          return   lottieDrawable.getIntrinsicWidth();
+        }
+        return 0;
+    }
+
+    public int getLottieHeight() {
+        if(lottieDrawable!=null) {
+            return   lottieDrawable.getIntrinsicHeight();
+        }
+        return 0;
+    }
+
+    public LottieDrawable getDrawable() {
+        return lottieDrawable;
+    }
+
+    //将surface 绘制
+    public void generateSurfaceFrame(int frameIndex) {
+        float progress=frameIndex/lottieDrawable.getComposition().getEndFrame();
+        //将画面绘制到surface中
+        setProgress(progress);
+        //绘制纹理
+        mSurfaceRender.drawFrame(0,0);
+    }
+    //初始化GL相关
+    public void initGL() {
+        lottieSurfaceTexture=new LottieSurfaceTexture(getLottieWidth(),getLottieHeight());
+        setSurface(lottieSurfaceTexture.getSurface());
+        //初始化绘制
+        mSurfaceRender = new DefaultLottieRender(lottieSurfaceTexture.getSurfaceTextrue(),lottieSurfaceTexture.getmTextureIn());
+        mSurfaceRender.setRenderSize(getLottieWidth(),getLottieHeight());
+    }
+    Handler handler=new Handler(Looper.getMainLooper());
+    public void release(){
+        mSurfaceRender.destroy();
+        lottieSurfaceTexture.release();
+
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                lottieDrawable.clearComposition();
+                lottieDrawable.cancelAnimation();
+            }
+        });
+
+        handler.removeCallbacksAndMessages(null);
+        handler=null;
     }
 }
