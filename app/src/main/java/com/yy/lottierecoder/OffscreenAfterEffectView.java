@@ -144,15 +144,8 @@ public class OffscreenAfterEffectView extends View implements IGLView, Drawable.
     public void release(){
         mSurfaceRender.destroy();
         lottieSurfaceTexture.release();
-
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                lottieDrawable.clearComposition();
-                lottieDrawable.cancelAnimation();
-            }
-        });
-
+        lottieDrawable.clearComposition();
+        lottieDrawable.cancelAnimation();
         handler.removeCallbacksAndMessages(null);
         handler=null;
     }

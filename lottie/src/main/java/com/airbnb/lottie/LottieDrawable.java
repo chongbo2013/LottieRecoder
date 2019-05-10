@@ -16,6 +16,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 
@@ -62,7 +63,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
 
   private final Matrix matrix = new Matrix();
   private LottieComposition composition;
-  private final LottieValueAnimator animator = new LottieValueAnimator();
+  private final LottieValueAnimator animator = new LottieValueAnimator(Looper.myLooper());
   private float scale = 1f;
   private boolean systemAnimationsEnabled = true;
 

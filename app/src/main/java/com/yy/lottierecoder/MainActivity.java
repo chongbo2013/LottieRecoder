@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
+
                 YYTemplateRender yyTemplateRender = new YYTemplateRender(MainActivity.this, new YYTemplateRender.IRenderProgressListem() {
                     @Override
                     public void onProgress(float progress) {
@@ -85,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
                             });
                     }
                 }, null, null, Environment.getExternalStorageDirectory().getAbsolutePath() + "/lottie.mp4");
+
                 yyTemplateRender.start();
             }
         }).start();
