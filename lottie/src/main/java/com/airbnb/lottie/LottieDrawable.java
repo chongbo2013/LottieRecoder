@@ -63,7 +63,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
 
   private final Matrix matrix = new Matrix();
   private LottieComposition composition;
-  private final LottieValueAnimator animator = new LottieValueAnimator(Looper.myLooper());
+  private final LottieValueAnimator animator = new LottieValueAnimator();
   private float scale = 1f;
   private boolean systemAnimationsEnabled = true;
 

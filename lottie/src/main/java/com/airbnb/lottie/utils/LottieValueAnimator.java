@@ -1,20 +1,19 @@
 package com.airbnb.lottie.utils;
 
 import android.animation.ValueAnimator;
-import android.os.Looper;
 import android.support.annotation.FloatRange;
 import android.support.annotation.MainThread;
 import android.support.annotation.Nullable;
 import android.support.annotation.VisibleForTesting;
+import android.view.Choreographer;
 
 import com.airbnb.lottie.LottieComposition;
-import com.glview.view.animation.AnimationUtils;
 
 /**
  * This is a slightly modified {@link ValueAnimator} that allows us to update start and end values
  * easily optimizing for the fact that we know that it's a value animator with 2 floats.
  */
-public class LottieValueAnimator extends BaseLottieAnimator/* implements Runnable, Choreographer.FrameCallback */{
+public class LottieValueAnimator extends BaseLottieAnimator implements Choreographer.FrameCallback {
 
 
   private float speed = 1f;
@@ -27,8 +26,7 @@ public class LottieValueAnimator extends BaseLottieAnimator/* implements Runnabl
   @Nullable private LottieComposition composition;
   @VisibleForTesting protected boolean running = false;
 
-  public LottieValueAnimator(Looper looper) {
-
+  public LottieValueAnimator() {
   }
 
   /**
@@ -78,8 +76,8 @@ public class LottieValueAnimator extends BaseLottieAnimator/* implements Runnabl
     return running;
   }
 
-   public void doFrame(long frameTimeNanos) {
-//    postFrameCallback();
+  @Override public void doFrame(long frameTimeNanos) {
+    postFrameCallback();
     if (composition == null || !isRunning()) {
       return;
     }
@@ -258,21 +256,19 @@ public class LottieValueAnimator extends BaseLottieAnimator/* implements Runnabl
 
   protected void postFrameCallback() {
     if (isRunning()) {
-//      removeFrameCallback(false);
-//      Choreographer.getInstance().postFrameCallback(this);
-      doFrame(AnimationUtils.currentAnimationTimeMillis()*1000);
+      removeFrameCallback(false);
+      Choreographer.getInstance().postFrameCallback(this);
     }
   }
 
-
-  @MainThread
+//  @MainThread
   protected void removeFrameCallback() {
     this.removeFrameCallback(true);
   }
 
-  @MainThread
+//  @MainThread
   protected void removeFrameCallback(boolean stopRunning) {
-//    Choreographer.getInstance().removeFrameCallback(this);
+    Choreographer.getInstance().removeFrameCallback(this);
     if (stopRunning) {
       running = false;
     }
@@ -286,6 +282,4 @@ public class LottieValueAnimator extends BaseLottieAnimator/* implements Runnabl
       throw new IllegalStateException(String.format("Frame must be [%f,%f]. It is %f", minFrame, maxFrame, frame));
     }
   }
-
-
 }
