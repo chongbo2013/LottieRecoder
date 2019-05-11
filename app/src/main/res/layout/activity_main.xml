@@ -11,14 +11,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.airbnb.lottie.LottieAnimationView
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:visibility="gone"
-            app:lottie_autoPlay="true"
-            app:lottie_fileName="kuaijian.json"
-            app:lottie_imageAssetsFolder="images"
-            app:lottie_loop="true" />
+        <!--<com.airbnb.lottie.LottieAnimationView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="250dp"-->
+            <!--android:visibility="gone"-->
+            <!--app:lottie_autoPlay="true"-->
+            <!--app:lottie_fileName="kuaijian.json"-->
+            <!--app:lottie_imageAssetsFolder="images"-->
+            <!--app:lottie_loop="true" />-->
 
 
         <Button

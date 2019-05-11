@@ -29,6 +29,7 @@ import android.support.annotation.Nullable;
 
 import com.airbnb.lottie.manager.FontAssetManager;
 import com.airbnb.lottie.manager.ImageAssetManager;
+import com.airbnb.lottie.manager.VideoAssetManager;
 import com.airbnb.lottie.model.KeyPath;
 import com.airbnb.lottie.model.Marker;
 import com.airbnb.lottie.model.layer.CompositionLayer;
@@ -75,6 +76,8 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
   private String imageAssetsFolder;
   @Nullable
   private ImageAssetDelegate imageAssetDelegate;
+  @Nullable
+  private VideoAssetDelegate videoAssetDelegate;
   @Nullable
   private FontAssetManager fontAssetManager;
   @Nullable
@@ -781,7 +784,13 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
       imageAssetManager.setDelegate(assetDelegate);
     }
   }
-
+  public void setVideoAssetDelegate(
+          @SuppressWarnings("NullableProblems")VideoAssetDelegate assetDelegate) {
+    this.videoAssetDelegate = assetDelegate;
+    if (videoAssetManager != null) {
+      videoAssetManager.setDelegate(assetDelegate);
+    }
+  }
   /**
    * Use this to manually set fonts.
    */
@@ -952,6 +961,38 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
     return null;
   }
 
+  /**
+   * 视频资源解析获取
+   * @param id
+   * @return
+   */
+  @Nullable
+  public Bitmap getVideoAsset(String id,int time) {
+    VideoAssetManager bm = getVideoAssetManager();
+    if (bm != null) {
+      return bm.bitmapForId(id,time);
+    }
+    return null;
+  }
+
+  VideoAssetManager videoAssetManager;
+  private VideoAssetManager getVideoAssetManager() {
+    if (getCallback() == null) {
+      // We can't get a bitmap since we can't get a Context from the callback.
+      return null;
+    }
+
+    if (videoAssetManager != null && !videoAssetManager.hasSameContext(getContext())) {
+      videoAssetManager = null;
+    }
+
+    if (videoAssetManager == null) {
+      videoAssetManager = new VideoAssetManager(getCallback(),
+              imageAssetsFolder, videoAssetDelegate, composition.getVideos());
+    }
+
+    return videoAssetManager;
+  }
   private ImageAssetManager getImageAssetManager() {
     if (getCallback() == null) {
       // We can't get a bitmap since we can't get a Context from the callback.

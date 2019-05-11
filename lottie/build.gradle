@@ -7,14 +7,6 @@ android {
   defaultConfig {
     minSdkVersion 18
     targetSdkVersion 28
-//    externalNativeBuild {
-//      cmake {
-//        cppFlags "-std=c++11"
-//      }
-//      ndk {
-//        abiFilters "armeabi-v7a"
-//      }
-//    }
   }
 
   compileOptions {
@@ -32,11 +24,7 @@ android {
     jni.srcDirs = []
   }
 
-//  externalNativeBuild {
-//    cmake {
-//      path "src/main/cpp/CMakeLists.txt"
-//    }
-//  }
+
 }
 
 dependencies {
@@ -44,7 +32,7 @@ dependencies {
   implementation 'com.android.support:support-annotations:28.0.0'
   testImplementation 'org.mockito:mockito-core:2.15.0'
   testImplementation 'org.robolectric:robolectric:4.0-alpha-3'
-  implementation project(':gLViewSdk')
+
 }
 
 

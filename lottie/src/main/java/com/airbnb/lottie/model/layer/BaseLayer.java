@@ -51,6 +51,8 @@ public abstract class BaseLayer
         return new SolidLayer(drawable, layerModel);
       case IMAGE:
         return new ImageLayer(drawable, layerModel);
+      case VIDEO:
+        return new VideoLayer(drawable, layerModel);
       case NULL:
         return new NullLayer(drawable, layerModel);
       case TEXT:
@@ -226,6 +228,7 @@ public abstract class BaseLayer
     int opacity = transform.getOpacity() == null ? 100 : transform.getOpacity().getValue();
     int alpha = (int)
         ((parentAlpha / 255f * (float) opacity / 100f) * 255);
+    //没有遮罩和蒙版
     if (!hasMatteOnThisLayer() && !hasMasksOnThisLayer()) {
       matrix.preConcat(transform.getMatrix());
       L.beginSection("Layer#drawLayer");

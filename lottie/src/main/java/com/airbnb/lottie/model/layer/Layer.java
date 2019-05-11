@@ -23,6 +23,7 @@ public class Layer {
     NULL,
     SHAPE,
     TEXT,
+    VIDEO,
     UNKNOWN
   }
 
@@ -98,7 +99,9 @@ public class Layer {
   float getStartProgress() {
     return startFrame / composition.getDurationFrames();
   }
-
+  float getStartFrame() {
+    return startFrame ;
+  }
   List<Keyframe<Float>> getInOutKeyframes() {
     return inOutKeyframes;
   }

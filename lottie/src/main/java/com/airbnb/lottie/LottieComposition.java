@@ -43,6 +43,7 @@ public class LottieComposition {
   private final HashSet<String> warnings = new HashSet<>();
   private Map<String, List<Layer>> precomps;
   private Map<String, LottieImageAsset> images;
+  private Map<String, LottieVideoAsset> videos;
   /** Map of font names to fonts */
   private Map<String, Font> fonts;
   private List<Marker> markers;
@@ -68,7 +69,7 @@ public class LottieComposition {
   @RestrictTo(RestrictTo.Scope.LIBRARY)
   public void init(Rect bounds, float startFrame, float endFrame, float frameRate,
       List<Layer> layers, LongSparseArray<Layer> layerMap, Map<String,
-      List<Layer>> precomps, Map<String, LottieImageAsset> images,
+      List<Layer>> precomps, Map<String, LottieImageAsset> images, Map<String,LottieVideoAsset> videos,
       SparseArrayCompat<FontCharacter> characters, Map<String, Font> fonts,
       List<Marker> markers) {
     this.bounds = bounds;
@@ -79,6 +80,7 @@ public class LottieComposition {
     this.layerMap = layerMap;
     this.precomps = precomps;
     this.images = images;
+    this.videos=videos;
     this.characters = characters;
     this.fonts = fonts;
     this.markers = markers;
@@ -196,7 +198,9 @@ public class LottieComposition {
   @SuppressWarnings("WeakerAccess") public Map<String, LottieImageAsset> getImages() {
     return images;
   }
-
+  @SuppressWarnings("WeakerAccess") public Map<String, LottieVideoAsset> getVideos() {
+    return videos;
+  }
   public float getDurationFrames() {
     return endFrame - startFrame;
   }

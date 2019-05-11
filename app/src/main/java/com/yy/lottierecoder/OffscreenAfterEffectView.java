@@ -16,6 +16,8 @@ import com.airbnb.lottie.LottieComposition;
 import com.airbnb.lottie.LottieCompositionFactory;
 import com.airbnb.lottie.LottieDrawable;
 import com.airbnb.lottie.LottieResult;
+import com.airbnb.lottie.LottieVideoAsset;
+import com.airbnb.lottie.VideoAssetDelegate;
 import com.yy.lottierecoder.encoders.DefaultLottieRender;
 import com.yy.lottierecoder.encoders.LottieSurfaceTexture;
 
@@ -39,9 +41,16 @@ public class OffscreenAfterEffectView extends View implements IGLView, Drawable.
         clearComposition();
         lottieDrawable.setImagesAssetsFolder("images");
         lottieDrawable.setCallback(this);
-        LottieResult<LottieComposition> result = LottieCompositionFactory.fromAssetSync(context, "kuaijian.json");
+        LottieResult<LottieComposition> result = LottieCompositionFactory.fromAssetSync(context, "data.json");
         if (result.getValue() != null) {
             lottieDrawable.setComposition(result.getValue());
+            lottieDrawable.setVideoAssetDelegate(new VideoAssetDelegate() {
+                @Nullable
+                @Override
+                public Bitmap fetchBitmap(LottieVideoAsset videoAsset, int time) {
+                    return null;
+                }
+            });
             lottieDrawable.setBounds(0,0,result.getValue().getBounds().width(),result.getValue().getBounds().height());
 
         }
@@ -144,6 +153,7 @@ public class OffscreenAfterEffectView extends View implements IGLView, Drawable.
     public void release(){
         mSurfaceRender.destroy();
         lottieSurfaceTexture.release();
+        //后面再优化去除跟主线程相关的
         handler.post(new Runnable() {
             @Override
             public void run() {

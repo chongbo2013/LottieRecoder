@@ -9,6 +9,8 @@ import android.util.JsonReader;
 import com.airbnb.lottie.L;
 import com.airbnb.lottie.LottieComposition;
 import com.airbnb.lottie.LottieImageAsset;
+import com.airbnb.lottie.LottieVideoAsset;
+import com.airbnb.lottie.manager.VideoAssetManager;
 import com.airbnb.lottie.model.Font;
 import com.airbnb.lottie.model.FontCharacter;
 import com.airbnb.lottie.model.Marker;
@@ -37,12 +39,13 @@ public class LottieCompositionParser {
     int height = 0;
     Map<String, List<Layer>> precomps = new HashMap<>();
     Map<String, LottieImageAsset> images = new HashMap<>();
+    Map<String, LottieVideoAsset> videos = new HashMap<>();
     Map<String, Font> fonts = new HashMap<>();
     List<Marker> markers = new ArrayList<>();
     SparseArrayCompat<FontCharacter> characters = new SparseArrayCompat<>();
 
     LottieComposition composition = new LottieComposition();
-
+    String folder="";
     reader.beginObject();
     while (reader.hasNext()) {
       switch (reader.nextName()) {
@@ -73,10 +76,10 @@ public class LottieCompositionParser {
           }
           break;
         case "layers":
-          parseLayers(reader, composition, layers, layerMap);
+          parseLayers(reader, composition, layers, layerMap,videos);
           break;
         case "assets":
-          parseAssets(reader, composition, precomps, images);
+            folder=parseAssets(reader, composition, precomps, images,videos);
           break;
         case "fonts":
           parseFonts(reader, fonts);
@@ -97,18 +100,24 @@ public class LottieCompositionParser {
     int scaledHeight = (int) (height * scale);
     Rect bounds = new Rect(0, 0, scaledWidth, scaledHeight);
 
+    if(videos!=null&&videos.size()>0){
+        //更新部分信息
+        for (LottieVideoAsset value : videos.values()) {
+            value.setDirName(folder);
+        }
+    }
     composition.init(bounds, startFrame, endFrame, frameRate, layers, layerMap, precomps,
-        images, characters, fonts, markers);
+        images,videos, characters, fonts, markers);
 
     return composition;
   }
 
   private static void parseLayers(JsonReader reader, LottieComposition composition,
-      List<Layer> layers, LongSparseArray<Layer> layerMap) throws IOException {
+      List<Layer> layers, LongSparseArray<Layer> layerMap,Map<String, LottieVideoAsset> videos) throws IOException {
     int imageCount = 0;
     reader.beginArray();
     while (reader.hasNext()) {
-      Layer layer = LayerParser.parse(reader, composition);
+      Layer layer = LayerParser.parse(reader, composition,videos);
       if (layer.getLayerType() == Layer.LayerType.IMAGE) {
         imageCount++;
       }
@@ -124,9 +133,10 @@ public class LottieCompositionParser {
     reader.endArray();
   }
 
-  private static void parseAssets(JsonReader reader, LottieComposition composition,
-      Map<String, List<Layer>> precomps, Map<String, LottieImageAsset> images) throws IOException {
+  private static String parseAssets(JsonReader reader, LottieComposition composition,
+      Map<String, List<Layer>> precomps, Map<String, LottieImageAsset> images,Map<String,LottieVideoAsset> videos) throws IOException {
     reader.beginArray();
+    String outFolder = null;
     while (reader.hasNext()) {
       String id = null;
       // For precomps
@@ -146,7 +156,7 @@ public class LottieCompositionParser {
           case "layers":
             reader.beginArray();
             while (reader.hasNext()) {
-              Layer layer = LayerParser.parse(reader, composition);
+              Layer layer = LayerParser.parse(reader, composition,videos);
               layerMap.put(layer.getId(), layer);
               layers.add(layer);
             }
@@ -169,6 +179,7 @@ public class LottieCompositionParser {
         }
       }
       reader.endObject();
+      outFolder=relativeFolder;
       if (imageFileName != null) {
         LottieImageAsset image =
             new LottieImageAsset(width, height, id, imageFileName, relativeFolder);
@@ -178,6 +189,7 @@ public class LottieCompositionParser {
       }
     }
     reader.endArray();
+    return outFolder;
   }
 
   private static void parseFonts(JsonReader reader, Map<String, Font> fonts) throws IOException {

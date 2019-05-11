@@ -5,6 +5,7 @@ import android.graphics.Rect;
 import android.util.JsonReader;
 
 import com.airbnb.lottie.LottieComposition;
+import com.airbnb.lottie.LottieVideoAsset;
 import com.airbnb.lottie.value.Keyframe;
 import com.airbnb.lottie.model.animatable.AnimatableFloatValue;
 import com.airbnb.lottie.model.animatable.AnimatableTextFrame;
@@ -19,6 +20,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 public class LayerParser {
 
@@ -34,7 +36,7 @@ public class LayerParser {
         Layer.MatteType.NONE, null, false);
   }
 
-  public static Layer parse(JsonReader reader, LottieComposition composition) throws IOException {
+  public static Layer parse(JsonReader reader, LottieComposition composition, Map<String, LottieVideoAsset> videos) throws IOException {
     // This should always be set by After Effects. However, if somebody wants to minify
     // and optimize their json, the name isn't critical for most cases so it can be removed.
     String layerName = "UNSET";
@@ -77,10 +79,15 @@ public class LayerParser {
           break;
         case "ty":
           int layerTypeInt = reader.nextInt();
-          if (layerTypeInt < Layer.LayerType.UNKNOWN.ordinal()) {
-            layerType = Layer.LayerType.values()[layerTypeInt];
-          } else {
-            layerType = Layer.LayerType.UNKNOWN;
+          //初始化视频
+          if(layerTypeInt==9){
+            layerType= Layer.LayerType.VIDEO;
+          }else {
+            if (layerTypeInt < Layer.LayerType.UNKNOWN.ordinal()) {
+              layerType = Layer.LayerType.values()[layerTypeInt];
+            } else {
+              layerType = Layer.LayerType.UNKNOWN;
+            }
           }
           break;
         case "parent":
@@ -224,7 +231,11 @@ public class LayerParser {
     if (layerName.endsWith(".ai") || "ai".equals(cl)) {
       composition.addWarning("Convert your Illustrator layers to shape layers.");
     }
-
+    if("mp4".equals(cl)){
+      refId=layerName;
+      LottieVideoAsset lottieVideoAsset=new LottieVideoAsset(0,0,refId,layerName,"",0,0);
+      videos.put(refId,lottieVideoAsset);
+    }
     return new Layer(shapes, composition, layerName, layerId, layerType, parentId, refId,
         masks, transform, solidWidth, solidHeight, solidColor, timeStretch, startFrame,
         preCompWidth, preCompHeight, text, textProperties, inOutKeyframes, matteType,

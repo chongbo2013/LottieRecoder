@@ -21,6 +21,9 @@ import com.airbnb.lottie.value.LottieValueCallback;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 合成层
+ */
 public class CompositionLayer extends BaseLayer {
   @Nullable private BaseKeyframeAnimation<Float, Float> timeRemapping;
   private final List<BaseLayer> layers = new ArrayList<>();
