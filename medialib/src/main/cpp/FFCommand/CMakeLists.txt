@@ -10,7 +10,7 @@ add_library( ffcommand
         ffmpeg.c
         ffmpeg_filter.c
         ffmpeg_opt.c
-        FFmpegUtils.cpp )
+        com_ferris_medialib_FFmpegUtils.cpp )
 
 # 链接静态库
 target_link_libraries( ffcommand
