@@ -14,9 +14,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.airbnb.lottie.utils.Utils;
+import com.ferris.medialib.FFmpegUtils;
 import com.yy.lottierecoder.encoders.YYTemplateRender;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 将lottie渲染成视频MV
@@ -40,6 +43,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        List<String> cmdList = new ArrayList<String>();
+
+        cmdList.add("ffmpeg");
+        cmdList.add("-version");
+        String[] cmds = new String[cmdList.size()];
+        cmdList.toArray(cmds);
+        int ret = FFmpegUtils.execute(cmds);
+        if(ret>0){
+            System.out.println("");
+        }
     }
     final Handler handler=new Handler(){
         @Override
