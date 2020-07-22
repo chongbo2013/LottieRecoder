@@ -10,12 +10,21 @@ add_library( ffcommand
         ffmpeg.c
         ffmpeg_filter.c
         ffmpeg_opt.c
-        com_ferris_medialib_FFmpegUtils.cpp )
+        ffmpeg_hw.c
+        com_cgfay_media_FFmpegUtils.cpp )
 
 # 链接静态库
 target_link_libraries( ffcommand
-                       ffmpeg
 
+                       avcodec
+                        avdevice
+                       avfilter
+                      avformat
+                      avutil
+                      postproc
+                      swresample
+                      swscale
+                      fdk-aac
                        android
                        jnigraphics
                        log )

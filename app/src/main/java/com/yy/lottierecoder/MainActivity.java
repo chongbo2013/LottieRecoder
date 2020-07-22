@@ -14,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.airbnb.lottie.utils.Utils;
-import com.ferris.medialib.FFmpegUtils;
+import com.cgfay.media.FFmpegUtils;
 import com.yy.lottierecoder.encoders.YYTemplateRender;
 
 import java.io.File;
