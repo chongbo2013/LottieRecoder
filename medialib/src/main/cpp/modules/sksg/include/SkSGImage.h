@@ -8,9 +8,9 @@
 #ifndef SkSGImage_DEFINED
 #define SkSGImage_DEFINED
 
-#include "modules/sksg/include/SkSGRenderNode.h"
+#include "SkSGRenderNode.h"
 
-#include "include/core/SkFilterQuality.h"
+#include "../../include/core/SkFilterQuality.h"
 
 class SkImage;
 

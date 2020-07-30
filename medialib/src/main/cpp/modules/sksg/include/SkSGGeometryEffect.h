@@ -8,12 +8,12 @@
 #ifndef SkSGGeometryEffect_DEFINED
 #define SkSGGeometryEffect_DEFINED
 
-#include "modules/sksg/include/SkSGGeometryNode.h"
+#include "SkSGGeometryNode.h"
 
-#include "include/core/SkPaint.h"
-#include "include/core/SkPath.h"
-#include "include/effects/SkTrimPathEffect.h"
-#include "modules/sksg/include/SkSGTransform.h"
+#include "../../include/core/SkPaint.h"
+#include "../../include/core/SkPath.h"
+#include "../../include/effects/SkTrimPathEffect.h"
+#include "SkSGTransform.h"
 
 namespace sksg {
 

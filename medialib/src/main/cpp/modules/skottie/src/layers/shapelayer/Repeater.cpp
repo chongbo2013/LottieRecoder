@@ -5,13 +5,13 @@
  * found in the LICENSE file.
  */
 
-#include "modules/skottie/src/Adapter.h"
-#include "modules/skottie/src/SkottieJson.h"
-#include "modules/skottie/src/SkottiePriv.h"
-#include "modules/skottie/src/SkottieValue.h"
-#include "modules/skottie/src/layers/shapelayer/ShapeLayer.h"
-#include "modules/sksg/include/SkSGGroup.h"
-#include "modules/sksg/include/SkSGTransform.h"
+#include "../../modules/skottie/src/Adapter.h"
+#include "../../modules/skottie/src/SkottieJson.h"
+#include "../../modules/skottie/src/SkottiePriv.h"
+#include "../../modules/skottie/src/SkottieValue.h"
+#include "../../modules/skottie/src/layers/shapelayer/ShapeLayer.h"
+#include "../../modules/sksg/include/SkSGGroup.h"
+#include "../../modules/sksg/include/SkSGTransform.h"
 
 #include <vector>
 

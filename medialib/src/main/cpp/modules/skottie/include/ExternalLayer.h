@@ -8,7 +8,7 @@
 #ifndef SkottieExternalLayer_DEFINED
 #define SkottieExternalLayer_DEFINED
 
-#include "include/core/SkRefCnt.h"
+#include "../../include/core/SkRefCnt.h"
 
 class SkCanvas;
 struct SkSize;

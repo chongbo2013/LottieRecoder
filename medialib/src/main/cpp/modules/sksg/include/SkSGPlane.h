@@ -8,7 +8,7 @@
 #ifndef SkSGPlane_DEFINED
 #define SkSGPlane_DEFINED
 
-#include "modules/sksg/include/SkSGGeometryNode.h"
+#include "SkSGGeometryNode.h"
 
 class SkCanvas;
 class SkPaint;

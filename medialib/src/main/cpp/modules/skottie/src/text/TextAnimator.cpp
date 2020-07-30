@@ -5,15 +5,15 @@
  * found in the LICENSE file.
  */
 
-#include "modules/skottie/src/text/TextAnimator.h"
+#include "../../modules/skottie/src/text/TextAnimator.h"
 
-#include "include/core/SkColor.h"
-#include "include/core/SkPoint.h"
-#include "include/private/SkNx.h"
-#include "modules/skottie/src/SkottieValue.h"
-#include "modules/skottie/src/animator/Animator.h"
-#include "modules/skottie/src/text/RangeSelector.h"
-#include "src/utils/SkJSON.h"
+#include "../../include/core/SkColor.h"
+#include "../../include/core/SkPoint.h"
+#include "../../include/private/SkNx.h"
+#include "../../modules/skottie/src/SkottieValue.h"
+#include "../../modules/skottie/src/animator/Animator.h"
+#include "../../modules/skottie/src/text/RangeSelector.h"
+#include "../../utils/SkJSON.h"
 
 namespace skottie {
 namespace internal {

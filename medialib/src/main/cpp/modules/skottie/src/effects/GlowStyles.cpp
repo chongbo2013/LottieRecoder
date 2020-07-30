@@ -5,15 +5,15 @@
  * found in the LICENSE file.
  */
 
-#include "modules/skottie/src/effects/Effects.h"
+#include "../../modules/skottie/src/effects/Effects.h"
 
-#include "include/core/SkColorFilter.h"
-#include "include/effects/SkColorMatrix.h"
-#include "include/effects/SkImageFilters.h"
-#include "modules/skottie/src/Adapter.h"
-#include "modules/skottie/src/SkottieJson.h"
-#include "modules/skottie/src/SkottieValue.h"
-#include "modules/sksg/include/SkSGRenderEffect.h"
+#include "../../include/core/SkColorFilter.h"
+#include "../../include/effects/SkColorMatrix.h"
+#include "../../include/effects/SkImageFilters.h"
+#include "../../modules/skottie/src/Adapter.h"
+#include "../../modules/skottie/src/SkottieJson.h"
+#include "../../modules/skottie/src/SkottieValue.h"
+#include "../../modules/sksg/include/SkSGRenderEffect.h"
 
 namespace skottie::internal {
 

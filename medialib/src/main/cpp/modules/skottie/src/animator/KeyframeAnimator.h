@@ -8,10 +8,10 @@
 #ifndef SkottieKeyframeAnimator_DEFINED
 #define SkottieKeyframeAnimator_DEFINED
 
-#include "include/core/SkCubicMap.h"
-#include "include/core/SkPoint.h"
-#include "include/private/SkNoncopyable.h"
-#include "modules/skottie/src/animator/Animator.h"
+#include "../../include/core/SkCubicMap.h"
+#include "../../include/core/SkPoint.h"
+#include "../../include/private/SkNoncopyable.h"
+#include "../../modules/skottie/src/animator/Animator.h"
 
 #include <vector>
 

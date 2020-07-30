@@ -5,11 +5,11 @@
  * found in the LICENSE file.
  */
 
-#include "modules/skottie/src/animator/Animator.h"
+#include "../../modules/skottie/src/animator/Animator.h"
 
-#include "modules/skottie/src/SkottieJson.h"
-#include "modules/skottie/src/SkottiePriv.h"
-#include "modules/skottie/src/animator/KeyframeAnimator.h"
+#include "../../modules/skottie/src/SkottieJson.h"
+#include "../../modules/skottie/src/SkottiePriv.h"
+#include "../../modules/skottie/src/animator/KeyframeAnimator.h"
 
 namespace skottie::internal {
 

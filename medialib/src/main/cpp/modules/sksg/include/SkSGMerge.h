@@ -8,9 +8,9 @@
 #ifndef SkSGMerge_DEFINED
 #define SkSGMerge_DEFINED
 
-#include "modules/sksg/include/SkSGGeometryNode.h"
+#include "SkSGGeometryNode.h"
 
-#include "include/core/SkPath.h"
+#include "../../include/core/SkPath.h"
 
 #include <vector>
 

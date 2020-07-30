@@ -5,14 +5,14 @@
  * found in the LICENSE file.
  */
 
-#include "modules/skottie/src/animator/VectorKeyframeAnimator.h"
+#include "../../modules/skottie/src/animator/VectorKeyframeAnimator.h"
 
-#include "include/core/SkTypes.h"
-#include "include/private/SkNx.h"
-#include "modules/skottie/src/SkottieJson.h"
-#include "modules/skottie/src/SkottieValue.h"
-#include "modules/skottie/src/animator/Animator.h"
-#include "src/core/SkSafeMath.h"
+#include "../../include/core/SkTypes.h"
+#include "../../include/private/SkNx.h"
+#include "../../modules/skottie/src/SkottieJson.h"
+#include "../../modules/skottie/src/SkottieValue.h"
+#include "../../modules/skottie/src/animator/Animator.h"
+#include "../../core/SkSafeMath.h"
 
 #include <algorithm>
 #include <cstring>

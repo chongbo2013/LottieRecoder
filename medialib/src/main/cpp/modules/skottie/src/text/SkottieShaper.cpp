@@ -5,16 +5,16 @@
  * found in the LICENSE file.
  */
 
-#include "modules/skottie/src/text/SkottieShaper.h"
+#include "../../modules/skottie/src/text/SkottieShaper.h"
 
-#include "include/core/SkFontMetrics.h"
-#include "include/core/SkFontMgr.h"
-#include "include/core/SkTextBlob.h"
-#include "include/private/SkTemplates.h"
-#include "modules/skshaper/include/SkShaper.h"
-#include "src/core/SkTLazy.h"
-#include "src/core/SkTextBlobPriv.h"
-#include "src/utils/SkUTF.h"
+#include "../../include/core/SkFontMetrics.h"
+#include "../../include/core/SkFontMgr.h"
+#include "../../include/core/SkTextBlob.h"
+#include "../../include/private/SkTemplates.h"
+#include "../../modules/skshaper/include/SkShaper.h"
+#include "../../core/SkTLazy.h"
+#include "../../core/SkTextBlobPriv.h"
+#include "../../utils/SkUTF.h"
 
 #include <limits.h>
 

@@ -8,11 +8,11 @@
 #ifndef SkottieTextAnimator_DEFINED
 #define SkottieTextAnimator_DEFINED
 
-#include "include/core/SkM44.h"
-#include "include/core/SkRefCnt.h"
-#include "modules/skottie/src/SkottiePriv.h"
-#include "modules/skottie/src/SkottieValue.h"
-#include "modules/sksg/include/SkSGScene.h"
+#include "../../include/core/SkM44.h"
+#include "../../include/core/SkRefCnt.h"
+#include "../../modules/skottie/src/SkottiePriv.h"
+#include "../../modules/skottie/src/SkottieValue.h"
+#include "../../modules/sksg/include/SkSGScene.h"
 
 #include <memory>
 #include <vector>

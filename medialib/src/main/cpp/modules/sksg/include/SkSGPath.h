@@ -8,9 +8,9 @@
 #ifndef SkSGPath_DEFINED
 #define SkSGPath_DEFINED
 
-#include "modules/sksg/include/SkSGGeometryNode.h"
+#include "SkSGGeometryNode.h"
 
-#include "include/core/SkPath.h"
+#include "../../include/core/SkPath.h"
 
 class SkCanvas;
 class SkPaint;

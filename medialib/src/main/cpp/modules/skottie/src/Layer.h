@@ -8,7 +8,7 @@
 #ifndef SkottieLayer_DEFINED
 #define SkottieLayer_DEFINED
 
-#include "modules/skottie/src/SkottiePriv.h"
+#include "../../modules/skottie/src/SkottiePriv.h"
 
 namespace skottie {
 namespace internal {

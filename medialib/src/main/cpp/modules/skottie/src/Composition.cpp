@@ -5,13 +5,13 @@
  * found in the LICENSE file.
  */
 
-#include "modules/skottie/src/Composition.h"
+#include "../../modules/skottie/src/Composition.h"
 
-#include "include/core/SkCanvas.h"
-#include "modules/skottie/src/Camera.h"
-#include "modules/skottie/src/SkottieJson.h"
-#include "modules/skottie/src/SkottiePriv.h"
-#include "modules/sksg/include/SkSGGroup.h"
+#include "../../include/core/SkCanvas.h"
+#include "../../modules/skottie/src/Camera.h"
+#include "../../modules/skottie/src/SkottieJson.h"
+#include "../../modules/skottie/src/SkottiePriv.h"
+#include "../../modules/sksg/include/SkSGGroup.h"
 
 #include <algorithm>
 

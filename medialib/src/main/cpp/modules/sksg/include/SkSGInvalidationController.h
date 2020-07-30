@@ -8,8 +8,8 @@
 #ifndef SkSGInvalidationController_DEFINED
 #define SkSGInvalidationController_DEFINED
 
-#include "include/core/SkMatrix.h"
-#include "include/core/SkTypes.h"
+#include "../../include/core/SkMatrix.h"
+#include "../../include/core/SkTypes.h"
 
 #include <vector>
 

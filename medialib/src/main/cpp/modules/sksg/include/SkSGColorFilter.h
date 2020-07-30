@@ -8,9 +8,9 @@
 #ifndef SkSGColorFilter_DEFINED
 #define SkSGColorFilter_DEFINED
 
-#include "modules/sksg/include/SkSGEffectNode.h"
+#include "SkSGEffectNode.h"
 
-#include "include/core/SkBlendMode.h"
+#include "../../include/core/SkBlendMode.h"
 
 #include <vector>
 

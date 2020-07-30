@@ -8,7 +8,7 @@
 #ifndef SkSGEffectNode_DEFINED
 #define SkSGEffectNode_DEFINED
 
-#include "modules/sksg/include/SkSGRenderNode.h"
+#include "SkSGRenderNode.h"
 
 namespace sksg {
 

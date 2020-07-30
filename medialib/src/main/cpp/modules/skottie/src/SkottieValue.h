@@ -8,9 +8,9 @@
 #ifndef SkottieValue_DEFINED
 #define SkottieValue_DEFINED
 
-#include "include/core/SkColor.h"
-#include "include/core/SkM44.h"
-#include "include/core/SkPath.h"
+#include "../../include/core/SkColor.h"
+#include "../../include/core/SkM44.h"
+#include "../../include/core/SkPath.h"
 
 #include <initializer_list>
 #include <vector>

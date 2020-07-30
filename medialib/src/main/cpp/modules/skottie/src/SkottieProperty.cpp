@@ -5,12 +5,12 @@
  * found in the LICENSE file.
  */
 
-#include "modules/skottie/include/SkottieProperty.h"
+#include "../../modules/skottie/include/SkottieProperty.h"
 
-#include "modules/skottie/src/Transform.h"
-#include "modules/skottie/src/text/TextAdapter.h"
-#include "modules/sksg/include/SkSGOpacityEffect.h"
-#include "modules/sksg/include/SkSGPaint.h"
+#include "../../modules/skottie/src/Transform.h"
+#include "../../modules/skottie/src/text/TextAdapter.h"
+#include "../../modules/sksg/include/SkSGOpacityEffect.h"
+#include "../../modules/sksg/include/SkSGPaint.h"
 
 namespace skottie {
 

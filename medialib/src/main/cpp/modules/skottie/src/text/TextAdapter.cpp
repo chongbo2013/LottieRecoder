@@ -5,20 +5,20 @@
  * found in the LICENSE file.
  */
 
-#include "modules/skottie/src/text/TextAdapter.h"
+#include "../../modules/skottie/src/text/TextAdapter.h"
 
-#include "include/core/SkFontMgr.h"
-#include "include/core/SkM44.h"
-#include "modules/skottie/src/SkottieJson.h"
-#include "modules/skottie/src/text/RangeSelector.h"
-#include "modules/skottie/src/text/TextAnimator.h"
-#include "modules/sksg/include/SkSGDraw.h"
-#include "modules/sksg/include/SkSGGroup.h"
-#include "modules/sksg/include/SkSGPaint.h"
-#include "modules/sksg/include/SkSGRect.h"
-#include "modules/sksg/include/SkSGRenderEffect.h"
-#include "modules/sksg/include/SkSGText.h"
-#include "modules/sksg/include/SkSGTransform.h"
+#include "../../include/core/SkFontMgr.h"
+#include "../../include/core/SkM44.h"
+#include "../../modules/skottie/src/SkottieJson.h"
+#include "../../modules/skottie/src/text/RangeSelector.h"
+#include "../../modules/skottie/src/text/TextAnimator.h"
+#include "../../modules/sksg/include/SkSGDraw.h"
+#include "../../modules/sksg/include/SkSGGroup.h"
+#include "../../modules/sksg/include/SkSGPaint.h"
+#include "../../modules/sksg/include/SkSGRect.h"
+#include "../../modules/sksg/include/SkSGRenderEffect.h"
+#include "../../modules/sksg/include/SkSGText.h"
+#include "../../modules/sksg/include/SkSGTransform.h"
 
 namespace skottie {
 namespace internal {

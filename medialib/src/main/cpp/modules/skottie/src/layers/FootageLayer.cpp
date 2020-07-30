@@ -5,12 +5,12 @@
  * found in the LICENSE file.
  */
 
-#include "modules/skottie/src/SkottiePriv.h"
+#include "../../modules/skottie/src/SkottiePriv.h"
 
-#include "include/core/SkImage.h"
-#include "modules/skottie/src/SkottieJson.h"
-#include "modules/sksg/include/SkSGImage.h"
-#include "modules/sksg/include/SkSGTransform.h"
+#include "../../include/core/SkImage.h"
+#include "../../modules/skottie/src/SkottieJson.h"
+#include "../../modules/sksg/include/SkSGImage.h"
+#include "../../modules/sksg/include/SkSGTransform.h"
 
 namespace skottie {
 namespace internal {

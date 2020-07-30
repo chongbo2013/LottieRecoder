@@ -8,7 +8,7 @@
 #ifndef SkSGGroup_DEFINED
 #define SkSGGroup_DEFINED
 
-#include "modules/sksg/include/SkSGRenderNode.h"
+#include "SkSGRenderNode.h"
 
 #include <vector>
 

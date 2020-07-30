@@ -5,14 +5,14 @@
  * found in the LICENSE file.
  */
 
-#include "modules/skottie/src/SkottiePriv.h"
+#include "../../modules/skottie/src/SkottiePriv.h"
 
-#include "include/utils/SkParse.h"
-#include "modules/skottie/src/SkottieJson.h"
-#include "modules/sksg/include/SkSGDraw.h"
-#include "modules/sksg/include/SkSGPaint.h"
-#include "modules/sksg/include/SkSGRect.h"
-#include "modules/sksg/include/SkSGRenderNode.h"
+#include "../../include/utils/SkParse.h"
+#include "../../modules/skottie/src/SkottieJson.h"
+#include "../../modules/sksg/include/SkSGDraw.h"
+#include "../../modules/sksg/include/SkSGPaint.h"
+#include "../../modules/sksg/include/SkSGRect.h"
+#include "../../modules/sksg/include/SkSGRenderNode.h"
 
 namespace skottie {
 namespace internal {

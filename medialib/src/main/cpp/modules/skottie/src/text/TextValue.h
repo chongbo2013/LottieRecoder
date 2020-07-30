@@ -8,7 +8,7 @@
 #ifndef SkottieTextValue_DEFINED
 #define SkottieTextValue_DEFINED
 
-#include "modules/skottie/include/SkottieProperty.h"
+#include "../../modules/skottie/include/SkottieProperty.h"
 
 namespace skjson { class Value; }
 

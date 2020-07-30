@@ -8,9 +8,9 @@
 #ifndef SkottieShapeLayer_DEFINED
 #define SkottieShapeLayer_DEFINED
 
-#include "include/private/SkNoncopyable.h"
-#include "modules/skottie/src/animator/Animator.h"
-#include "modules/sksg/include/SkSGMerge.h"
+#include "../../include/private/SkNoncopyable.h"
+#include "../../modules/skottie/src/animator/Animator.h"
+#include "../../modules/sksg/include/SkSGMerge.h"
 
 #include <vector>
 

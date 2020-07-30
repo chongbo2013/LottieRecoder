@@ -8,7 +8,7 @@
 #ifndef SkSGMaskEffect_DEFINED
 #define SkSGMaskEffect_DEFINED
 
-#include "modules/sksg/include/SkSGEffectNode.h"
+#include "SkSGEffectNode.h"
 
 namespace sksg {
 

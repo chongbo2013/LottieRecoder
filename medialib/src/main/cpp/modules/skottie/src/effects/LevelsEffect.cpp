@@ -5,13 +5,13 @@
  * found in the LICENSE file.
  */
 
-#include "modules/skottie/src/effects/Effects.h"
+#include "../../modules/skottie/src/effects/Effects.h"
 
-#include "include/effects/SkTableColorFilter.h"
-#include "modules/skottie/src/Adapter.h"
-#include "modules/skottie/src/SkottieValue.h"
-#include "modules/sksg/include/SkSGColorFilter.h"
-#include "src/utils/SkJSON.h"
+#include "../../include/effects/SkTableColorFilter.h"
+#include "../../modules/skottie/src/Adapter.h"
+#include "../../modules/skottie/src/SkottieValue.h"
+#include "../../modules/sksg/include/SkSGColorFilter.h"
+#include "../../utils/SkJSON.h"
 
 #include <array>
 #include <cmath>

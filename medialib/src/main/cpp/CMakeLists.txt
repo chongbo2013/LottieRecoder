@@ -25,31 +25,31 @@ endif (${ANDROID_PLATFORM_LEVEL} LESS 11)
 
 # 添加include目录路径
 include_directories(
-        include
-        include/android
-        include/c
-        include/codec
-        include/config
-        include/core
-        include/docs
-        include/effects
-        include/encode
-        include/gpu
-        include/gpu/d3d
-        include/gpu/dawn
-        include/gpu/gl
-        include/gpu/mock
-        include/gpu/mtl
-        include/gpu/vk
-        include/pathops
-        include/ports
-        include/private
-        include/svg
-        include/third_party
-        include/third_party/skcms
-        include/third_party/vulkan/vulkan
-        include/utils
-        include/utils/mac
+        modules/include
+        modules/include/android
+        modules/include/c
+        modules/include/codec
+        modules/include/config
+        modules/include/core
+        modules/include/docs
+        modules/include/effects
+        modules/include/encode
+        modules/include/gpu
+        modules/include/gpu/d3d
+        modules/include/gpu/dawn
+        modules/include/gpu/gl
+        modules/include/gpu/mock
+        modules/include/gpu/mtl
+        modules/include/gpu/vk
+        modules/include/pathops
+        modules/include/ports
+        modules/include/private
+        modules/include/svg
+        modules/include/third_party
+        modules/include/third_party/skcms
+        modules/include/third_party/vulkan/vulkan
+        modules/include/utils
+        modules/include/utils/mac
         #modules include
         modules/skottie/include
         modules/skottie/src
@@ -87,9 +87,6 @@ add_library( ffcommand
 
 
         # skottie
-        #        fuzz/FuzzSkottieJSON.cpp
-        #        gm/ExternalProperties.cpp
-        #        gm/SkottieGM.cpp
         modules/skottie/src/animator/Animator.cpp
         modules/skottie/src/animator/KeyframeAnimator.cpp
         modules/skottie/src/animator/ScalarKeyframeAnimator.cpp
@@ -98,7 +95,7 @@ add_library( ffcommand
         modules/skottie/src/animator/Vec2KeyframeAnimator.cpp
         modules/skottie/src/animator/VectorKeyframeAnimator.cpp
 
-        #        //effects
+        # effects
         modules/skottie/src/effects/BrightnessContrastEffect.cpp
         modules/skottie/src/effects/CornerPinEffect.cpp
         modules/skottie/src/effects/DropShadowEffect.cpp
@@ -120,7 +117,7 @@ add_library( ffcommand
         modules/skottie/src/effects/TransformEffect.cpp
         modules/skottie/src/effects/TritoneEffect.cpp
         modules/skottie/src/effects/VenetianBlindsEffect.cpp
-        #        layers
+        #layers
         modules/skottie/src/layers/shapelayer/Ellipse.cpp
         modules/skottie/src/layers/shapelayer/FillStroke.cpp
         modules/skottie/src/layers/shapelayer/Gradient.cpp
@@ -152,7 +149,6 @@ add_library( ffcommand
         modules/skottie/src/Skottie.cpp
         modules/skottie/src/SkottieJson.cpp
         modules/skottie/src/SkottieProperty.cpp
-        modules/skottie/src/SkottieTest.cpp
         modules/skottie/src/SkottieTool.cpp
         modules/skottie/src/Transform.cpp
 

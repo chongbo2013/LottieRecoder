@@ -8,7 +8,7 @@
 #ifndef SkSGTransform_DEFINED
 #define SkSGTransform_DEFINED
 
-#include "modules/sksg/include/SkSGEffectNode.h"
+#include "SkSGEffectNode.h"
 
 class SkM44;
 class SkMatrix;

@@ -8,7 +8,7 @@
 #ifndef SkSGOpacityEffect_DEFINED
 #define SkSGOpacityEffect_DEFINED
 
-#include "modules/sksg/include/SkSGEffectNode.h"
+#include "SkSGEffectNode.h"
 
 namespace sksg {
 

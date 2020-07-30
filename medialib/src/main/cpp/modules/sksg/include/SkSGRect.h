@@ -8,11 +8,11 @@
 #ifndef SkSGRect_DEFINED
 #define SkSGRect_DEFINED
 
-#include "modules/sksg/include/SkSGGeometryNode.h"
+#include "SkSGGeometryNode.h"
 
-#include "include/core/SkPath.h"
-#include "include/core/SkRRect.h"
-#include "include/core/SkRect.h"
+#include "../../include/core/SkPath.h"
+#include "../../include/core/SkRRect.h"
+#include "../../include/core/SkRect.h"
 
 class SkCanvas;
 class SkPaint;

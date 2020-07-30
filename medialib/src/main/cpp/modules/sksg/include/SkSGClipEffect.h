@@ -8,7 +8,7 @@
 #ifndef SkSGClipEffect_DEFINED
 #define SkSGClipEffect_DEFINED
 
-#include "modules/sksg/include/SkSGEffectNode.h"
+#include "SkSGEffectNode.h"
 
 namespace sksg {
 

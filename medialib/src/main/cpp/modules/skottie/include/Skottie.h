@@ -8,14 +8,14 @@
 #ifndef Skottie_DEFINED
 #define Skottie_DEFINED
 
-#include "include/core/SkFontMgr.h"
-#include "include/core/SkRefCnt.h"
-#include "include/core/SkSize.h"
-#include "include/core/SkString.h"
-#include "include/core/SkTypes.h"
-#include "modules/skottie/include/ExternalLayer.h"
-#include "modules/skottie/include/SkottieProperty.h"
-#include "modules/skresources/include/SkResources.h"
+#include "../../include/core/SkFontMgr.h"
+#include "../../include/core/SkRefCnt.h"
+#include "../../include/core/SkSize.h"
+#include "../../include/core/SkString.h"
+#include "../../include/core/SkTypes.h"
+#include "../../modules/skottie/include/ExternalLayer.h"
+#include "../../modules/skottie/include/SkottieProperty.h"
+#include "../../modules/skresources/include/SkResources.h"
 
 #include <memory>
 #include <vector>

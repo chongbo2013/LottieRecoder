@@ -5,24 +5,24 @@
  * found in the LICENSE file.
  */
 
-#include "modules/skottie/src/Layer.h"
+#include "../../modules/skottie/src/Layer.h"
 
-#include "modules/skottie/src/Camera.h"
-#include "modules/skottie/src/Composition.h"
-#include "modules/skottie/src/SkottieJson.h"
-#include "modules/skottie/src/effects/Effects.h"
-#include "modules/skottie/src/effects/MotionBlurEffect.h"
-#include "modules/sksg/include/SkSGClipEffect.h"
-#include "modules/sksg/include/SkSGDraw.h"
-#include "modules/sksg/include/SkSGGroup.h"
-#include "modules/sksg/include/SkSGMaskEffect.h"
-#include "modules/sksg/include/SkSGMerge.h"
-#include "modules/sksg/include/SkSGPaint.h"
-#include "modules/sksg/include/SkSGPath.h"
-#include "modules/sksg/include/SkSGRect.h"
-#include "modules/sksg/include/SkSGRenderEffect.h"
-#include "modules/sksg/include/SkSGRenderNode.h"
-#include "modules/sksg/include/SkSGTransform.h"
+#include "../../modules/skottie/src/Camera.h"
+#include "../../modules/skottie/src/Composition.h"
+#include "../../modules/skottie/src/SkottieJson.h"
+#include "../../modules/skottie/src/effects/Effects.h"
+#include "../../modules/skottie/src/effects/MotionBlurEffect.h"
+#include "../../modules/sksg/include/SkSGClipEffect.h"
+#include "../../modules/sksg/include/SkSGDraw.h"
+#include "../../modules/sksg/include/SkSGGroup.h"
+#include "../../modules/sksg/include/SkSGMaskEffect.h"
+#include "../../modules/sksg/include/SkSGMerge.h"
+#include "../../modules/sksg/include/SkSGPaint.h"
+#include "../../modules/sksg/include/SkSGPath.h"
+#include "../../modules/sksg/include/SkSGRect.h"
+#include "../../modules/sksg/include/SkSGRenderEffect.h"
+#include "../../modules/sksg/include/SkSGRenderNode.h"
+#include "../../modules/sksg/include/SkSGTransform.h"
 
 namespace skottie {
 namespace internal {

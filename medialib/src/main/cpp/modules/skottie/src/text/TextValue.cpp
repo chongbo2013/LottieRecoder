@@ -5,11 +5,11 @@
  * found in the LICENSE file.
  */
 
-#include "modules/skottie/src/text/TextValue.h"
+#include "../../modules/skottie/src/text/TextValue.h"
 
-#include "modules/skottie/src/SkottieJson.h"
-#include "modules/skottie/src/SkottiePriv.h"
-#include "modules/skottie/src/SkottieValue.h"
+#include "../../modules/skottie/src/SkottieJson.h"
+#include "../../modules/skottie/src/SkottiePriv.h"
+#include "../../modules/skottie/src/SkottieValue.h"
 
 namespace skottie::internal {
 

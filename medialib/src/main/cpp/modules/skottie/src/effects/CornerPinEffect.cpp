@@ -5,11 +5,11 @@
  * found in the LICENSE file.
  */
 
-#include "modules/skottie/src/effects/Effects.h"
+#include "../../modules/skottie/src/effects/Effects.h"
 
-#include "modules/skottie/src/SkottieJson.h"
-#include "modules/skottie/src/SkottieValue.h"
-#include "modules/sksg/include/SkSGTransform.h"
+#include "../../modules/skottie/src/SkottieJson.h"
+#include "../../modules/skottie/src/SkottieValue.h"
+#include "../../modules/sksg/include/SkSGTransform.h"
 
 namespace skottie::internal {
 
