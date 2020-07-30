@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-
+def platformVersion = 21    // 18: openGLES 3 min api level
 android {
     compileSdkVersion 28
 
@@ -13,13 +13,15 @@ android {
         consumerProguardFiles "consumer-rules.pro"
 
         externalNativeBuild {
-            cmake {
+            externalNativeBuild {
+                cmake {
+                    cppFlags "-std=c++17"
+                }
+                ndk {
+                    abiFilters "armeabi-v7a"
+                }
+            }
 
-                    cppFlags "-std=c++11"
-            }
-            ndk {
-                abiFilters "armeabi-v7a", "arm64-v8a"
-            }
         }
 
     }

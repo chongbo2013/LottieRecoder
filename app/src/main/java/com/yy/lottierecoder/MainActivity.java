@@ -14,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.airbnb.lottie.utils.Utils;
-import com.cgfay.media.FFmpegUtils;
+
 import com.yy.lottierecoder.encoders.YYTemplateRender;
 
 import java.io.File;
@@ -39,20 +39,12 @@ public class MainActivity extends AppCompatActivity {
         btn_recoder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                recoder();
+
             }
         });
 
-        List<String> cmdList = new ArrayList<String>();
 
-        cmdList.add("ffmpeg");
-        cmdList.add("-version");
-        String[] cmds = new String[cmdList.size()];
-        cmdList.toArray(cmds);
-        int ret = FFmpegUtils.execute(cmds);
-        if(ret>0){
-            System.out.println("");
-        }
+
     }
     final Handler handler=new Handler(){
         @Override
