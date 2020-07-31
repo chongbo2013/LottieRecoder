@@ -50,6 +50,7 @@ include_directories(
         modules/include/third_party/vulkan/vulkan
         modules/include/utils
         modules/include/utils/mac
+        modules/include/tools/flags
         #modules include
         modules/skottie/include
         modules/skottie/src
@@ -60,6 +61,8 @@ include_directories(
         modules/skottie/src/layers/shapelayer
         modules/skottie/src/text
 
+        #utils
+        modules/skottie/utils
         #sksg
         modules/sksg/include
         )
@@ -94,7 +97,6 @@ add_library( ffcommand
         modules/skottie/src/animator/TextKeyframeAnimator.cpp
         modules/skottie/src/animator/Vec2KeyframeAnimator.cpp
         modules/skottie/src/animator/VectorKeyframeAnimator.cpp
-
         # effects
         modules/skottie/src/effects/BrightnessContrastEffect.cpp
         modules/skottie/src/effects/CornerPinEffect.cpp
@@ -152,6 +154,8 @@ add_library( ffcommand
         modules/skottie/src/SkottieTool.cpp
         modules/skottie/src/Transform.cpp
 
+        #
+        modules/skottie/src/SkottieTool.cpp
 
         #source
         modules/medias/native-lib.cpp

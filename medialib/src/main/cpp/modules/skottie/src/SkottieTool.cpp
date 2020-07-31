@@ -14,9 +14,9 @@
 #include "../../modules/skottie/include/Skottie.h"
 #include "../../modules/skottie/utils/SkottieUtils.h"
 #include "../../modules/skresources/include/SkResources.h"
-#include "src/core/SkOSFile.h"
-#include "src/core/SkTaskGroup.h"
-#include "src/utils/SkOSPath.h"
+#include "../../core/SkOSFile.h"
+#include "../../core/SkTaskGroup.h"
+#include "../../utils/SkOSPath.h"
 #include "tools/flags/CommandLineFlags.h"
 
 #include <algorithm>
