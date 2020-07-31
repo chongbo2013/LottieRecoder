@@ -5,13 +5,13 @@
  * found in the LICENSE file.
  */
 
-#include "../../modules/skottie/src/effects/MotionBlurEffect.h"
+#include "../../skottie/src/effects/MotionBlurEffect.h"
 
-#include "../../include/core/SkCanvas.h"
-#include "../../include/core/SkMath.h"
-#include "../../include/core/SkPixmap.h"
-#include "../../include/private/SkVx.h"
-#include "../../modules/skottie/src/animator/Animator.h"
+#include "core/SkCanvas.h"
+#include "core/SkMath.h"
+#include "core/SkPixmap.h"
+#include "private/SkVx.h"
+#include "../../skottie/src/animator/Animator.h"
 #include "../../core/SkMathPriv.h"
 
 namespace skottie {

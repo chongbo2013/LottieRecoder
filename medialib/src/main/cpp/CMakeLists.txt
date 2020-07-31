@@ -25,32 +25,32 @@ endif (${ANDROID_PLATFORM_LEVEL} LESS 11)
 
 # 添加include目录路径
 include_directories(
-        modules/include
-        modules/include/android
-        modules/include/c
-        modules/include/codec
-        modules/include/config
-        modules/include/core
-        modules/include/docs
-        modules/include/effects
-        modules/include/encode
-        modules/include/gpu
-        modules/include/gpu/d3d
-        modules/include/gpu/dawn
-        modules/include/gpu/gl
-        modules/include/gpu/mock
-        modules/include/gpu/mtl
-        modules/include/gpu/vk
-        modules/include/pathops
-        modules/include/ports
-        modules/include/private
-        modules/include/svg
-        modules/include/third_party
-        modules/include/third_party/skcms
-        modules/include/third_party/vulkan/vulkan
-        modules/include/utils
-        modules/include/utils/mac
-        modules/include/tools/flags
+
+        modules/skottie/include/android
+        modules/skottie/include/c
+        modules/skottie/include/codec
+        modules/skottie/include/config
+        modules/skottie/include/core
+        modules/skottie/include/docs
+        modules/skottie/include/effects
+        modules/skottie/include/encode
+        modules/skottie/include/gpu
+        modules/skottie/include/gpu/d3d
+        modules/skottie/include/gpu/dawn
+        modules/skottie/include/gpu/gl
+        modules/skottie/include/gpu/mock
+        modules/skottie/include/gpu/mtl
+        modules/skottie/include/gpu/vk
+        modules/skottie/include/pathops
+        modules/skottie/include/ports
+        modules/skottie/include/private
+        modules/skottie/include/svg
+        modules/skottie/include/third_party
+        modules/skottie/include/third_party/skcms
+        modules/skottie/include/third_party/vulkan/vulkan
+        modules/skottie/include/utils
+        modules/skottie/include/utils/mac
+        modules/skottie/include/flags
         #modules include
         modules/skottie/include
         modules/skottie/src
@@ -63,27 +63,28 @@ include_directories(
 
         #utils
         modules/skottie/utils
-        #sksg
-        modules/sksg/include
-        #skresource
-        modules/skresources/include
-        #skshaper
-        modules/skshaper/include
+
 
         #out
         )
 
 # 添加skia库
-add_library( skia SHARED IMPORTED )
-set_target_properties( skia
+add_library( libskia SHARED IMPORTED )
+set_target_properties( libskia
         PROPERTIES IMPORTED_LOCATION
         ${CMAKE_SOURCE_DIR}/../jniLibs/${ANDROID_ABI}/libskia.so )
 
-# 添加skia库
-add_library( sksg SHARED IMPORTED )
-set_target_properties( sksg
+# 添加sksg库
+add_library( libsksg SHARED IMPORTED )
+set_target_properties( libsksg
         PROPERTIES IMPORTED_LOCATION
         ${CMAKE_SOURCE_DIR}/../jniLibs/${ANDROID_ABI}/libsksg.so )
+
+# 添加skia库
+add_library( libskshaper SHARED IMPORTED )
+set_target_properties( libskshaper
+        PROPERTIES IMPORTED_LOCATION
+        ${CMAKE_SOURCE_DIR}/../jniLibs/${ANDROID_ABI}/libskshaper.so )
 
 
 
@@ -159,6 +160,7 @@ add_library( ffcommand
         modules/skottie/src/Transform.cpp
         #utils
         modules/skottie/utils/SkottieUtils.cpp
+        modules/skottie/utils/SkOSPath2.cpp
         #source
         modules/medias/native-lib.cpp
 
@@ -174,11 +176,13 @@ find_library( # Sets the name of the path variable.
         log)
 # 链接静态库
 target_link_libraries( ffcommand
-        skia
-        sksg
         jnigraphics
         EGL
         ${log-lib}
-        ${GLES-lib} )
+        ${GLES-lib}
+        libskia
+        libsksg
+        libskshaper
+        )
 
 

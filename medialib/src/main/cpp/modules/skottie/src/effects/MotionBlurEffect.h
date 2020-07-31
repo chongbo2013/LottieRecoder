@@ -8,8 +8,8 @@
 #ifndef SkottieMotionBlurEffect_DEFINED
 #define SkottieMotionBlurEffect_DEFINED
 
-#include "../../modules/sksg/include/SkSGRenderNode.h"
-#include "../../modules/sksg/include/SkSGScene.h"
+#include "SkSGRenderNode.h"
+#include "SkSGScene.h"
 
 namespace skottie {
 namespace internal {

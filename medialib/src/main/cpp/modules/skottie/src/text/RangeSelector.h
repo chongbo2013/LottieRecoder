@@ -8,9 +8,9 @@
 #ifndef SkottieRangeSelector_DEFINED
 #define SkottieRangeSelector_DEFINED
 
-#include "../../include/core/SkRefCnt.h"
-#include "../../modules/skottie/src/SkottiePriv.h"
-#include "../../modules/skottie/src/text/TextAnimator.h"
+#include "core/SkRefCnt.h"
+#include "../../skottie/src/SkottiePriv.h"
+#include "../../skottie/src/text/TextAnimator.h"
 
 #include <tuple>
 #include <vector>

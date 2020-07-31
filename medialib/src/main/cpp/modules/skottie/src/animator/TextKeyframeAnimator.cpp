@@ -5,10 +5,10 @@
  * found in the LICENSE file.
  */
 
-#include "../../modules/skottie/src/SkottieJson.h"
-#include "../../modules/skottie/src/SkottieValue.h"
-#include "../../modules/skottie/src/animator/KeyframeAnimator.h"
-#include "../../modules/skottie/src/text/TextValue.h"
+#include "../../skottie/src/SkottieJson.h"
+#include "../../skottie/src/SkottieValue.h"
+#include "../../skottie/src/animator/KeyframeAnimator.h"
+#include "../../skottie/src/text/TextValue.h"
 
 namespace skottie::internal {
 

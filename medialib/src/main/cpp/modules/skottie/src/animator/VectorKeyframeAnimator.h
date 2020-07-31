@@ -8,7 +8,7 @@
 #ifndef SkottieVectorKeyframeAnimator_DEFINED
 #define SkottieVectorKeyframeAnimator_DEFINED
 
-#include "../../modules/skottie/src/animator/KeyframeAnimator.h"
+#include "../../skottie/src/animator/KeyframeAnimator.h"
 
 #include <vector>
 

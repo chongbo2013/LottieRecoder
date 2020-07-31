@@ -5,9 +5,9 @@
  * found in the LICENSE file.
  */
 
-#include "../../modules/skottie/src/SkottiePriv.h"
+#include "../../skottie/src/SkottiePriv.h"
 
-#include "../../modules/sksg/include/SkSGRenderNode.h"
+#include "SkSGRenderNode.h"
 
 namespace skottie {
 namespace internal {

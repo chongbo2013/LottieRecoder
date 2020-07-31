@@ -5,20 +5,20 @@
  * found in the LICENSE file.
  */
 
-#include "../../modules/skottie/src/SkottiePriv.h"
+#include "../../skottie/src/SkottiePriv.h"
 
-#include "../../include/core/SkData.h"
-#include "../../include/core/SkFontMgr.h"
-#include "../../include/core/SkTypes.h"
-#include "../../modules/skottie/src/SkottieJson.h"
-#include "../../modules/skottie/src/text/TextAdapter.h"
-#include "../../modules/skottie/src/text/TextAnimator.h"
-#include "../../modules/skottie/src/text/TextValue.h"
-#include "../../modules/sksg/include/SkSGDraw.h"
-#include "../../modules/sksg/include/SkSGGroup.h"
-#include "../../modules/sksg/include/SkSGPaint.h"
-#include "../../modules/sksg/include/SkSGPath.h"
-#include "../../modules/sksg/include/SkSGText.h"
+#include "core/SkData.h"
+#include "core/SkFontMgr.h"
+#include "core/SkTypes.h"
+#include "../../skottie/src/SkottieJson.h"
+#include "../../skottie/src/text/TextAdapter.h"
+#include "../../skottie/src/text/TextAnimator.h"
+#include "../../skottie/src/text/TextValue.h"
+#include "SkSGDraw.h"
+#include "SkSGGroup.h"
+#include "SkSGPaint.h"
+#include "SkSGPath.h"
+#include "SkSGText.h"
 
 #include <string.h>
 

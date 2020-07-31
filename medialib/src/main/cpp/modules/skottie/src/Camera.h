@@ -8,7 +8,7 @@
 #ifndef SkottieCamera_DEFINED
 #define SkottieCamera_DEFINED
 
-#include "../../modules/skottie/src/Transform.h"
+#include "../../skottie/src/Transform.h"
 
 namespace skottie {
 namespace internal {

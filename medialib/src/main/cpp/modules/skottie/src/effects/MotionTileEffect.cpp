@@ -5,15 +5,15 @@
  * found in the LICENSE file.
  */
 
-#include "../../modules/skottie/src/effects/Effects.h"
+#include "../../skottie/src/effects/Effects.h"
 
-#include "../../include/core/SkCanvas.h"
-#include "../../include/core/SkPictureRecorder.h"
-#include "../../include/core/SkShader.h"
-#include "../../include/effects/SkGradientShader.h"
-#include "../../modules/skottie/src/Adapter.h"
-#include "../../modules/skottie/src/SkottieValue.h"
-#include "../../modules/sksg/include/SkSGRenderNode.h"
+#include "core/SkCanvas.h"
+#include "core/SkPictureRecorder.h"
+#include "core/SkShader.h"
+#include "effects/SkGradientShader.h"
+#include "../../skottie/src/Adapter.h"
+#include "../../skottie/src/SkottieValue.h"
+#include "SkSGRenderNode.h"
 #include "../../utils/SkJSON.h"
 
 #include <cmath>

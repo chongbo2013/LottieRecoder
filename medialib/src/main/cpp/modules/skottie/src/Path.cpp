@@ -5,11 +5,11 @@
  * found in the LICENSE file.
  */
 
-#include "../../modules/skottie/src/Adapter.h"
-#include "../../modules/skottie/src/SkottieJson.h"
-#include "../../modules/skottie/src/SkottiePriv.h"
-#include "../../modules/skottie/src/SkottieValue.h"
-#include "../../modules/sksg/include/SkSGPath.h"
+#include "../../skottie/src/Adapter.h"
+#include "../../skottie/src/SkottieJson.h"
+#include "../../skottie/src/SkottiePriv.h"
+#include "../../skottie/src/SkottieValue.h"
+#include "SkSGPath.h"
 
 namespace skottie {
 namespace internal {

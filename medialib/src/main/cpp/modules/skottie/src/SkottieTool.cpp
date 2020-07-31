@@ -5,19 +5,19 @@
  * found in the LICENSE file.
  */
 
-#include "../../include/core/SkCanvas.h"
-#include "../../include/core/SkGraphics.h"
-#include "../../include/core/SkPictureRecorder.h"
-#include "../../include/core/SkStream.h"
-#include "../../include/core/SkSurface.h"
-#include "../../include/encode/SkPngEncoder.h"
-#include "../../modules/skottie/include/Skottie.h"
-#include "../../modules/skottie/utils/SkottieUtils.h"
-#include "../../modules/skresources/include/SkResources.h"
-#include "../../core/SkOSFile.h"
-#include "../../core/SkTaskGroup.h"
-#include "../../utils/SkOSPath.h"
-#include "tools/flags/CommandLineFlags.h"
+#include "core/SkCanvas.h"
+#include "core/SkGraphics.h"
+#include "core/SkPictureRecorder.h"
+#include "core/SkStream.h"
+#include "core/SkSurface.h"
+#include "encode/SkPngEncoder.h"
+#include "Skottie.h"
+#include "SkottieUtils.h"
+#include "SkResources.h"
+#include "core/SkOSFile.h"
+#include "core/SkTaskGroup.h"
+#include "SkOSPath2.h"
+#include "flags/CommandLineFlags.h"
 
 #include <algorithm>
 #include <chrono>
@@ -50,7 +50,7 @@ static constexpr SkColor kClearColor = SK_ColorWHITE;
 
 std::unique_ptr<SkFILEWStream> MakeFrameStream(size_t idx, const char* ext) {
     const auto frame_file = SkStringPrintf("0%06zu.%s", idx, ext);
-    auto stream = std::make_unique<SkFILEWStream>(SkOSPath::Join(FLAGS_writePath[0],
+    auto stream = std::make_unique<SkFILEWStream>(SkOSPath2::Join(FLAGS_writePath[0],
                                                                    frame_file.c_str()).c_str());
     if (!stream->isValid()) {
         return nullptr;
@@ -264,7 +264,7 @@ int main(int argc, char** argv) {
     auto logger = sk_make_sp<Logger>();
     auto     rp = skresources::CachingResourceProvider::Make(
                     skresources::DataURIResourceProviderProxy::Make(
-                      skresources::FileResourceProvider::Make(SkOSPath::Dirname(FLAGS_input[0]),
+                      skresources::FileResourceProvider::Make(SkOSPath2::Dirname(FLAGS_input[0]),
                                                                 /*predecode=*/true),
                       /*predecode=*/true));
     auto data   = SkData::MakeFromFileName(FLAGS_input[0]);

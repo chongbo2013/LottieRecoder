@@ -8,7 +8,7 @@
 #ifndef SkottieAnimator_DEFINED
 #define SkottieAnimator_DEFINED
 
-#include "../../include/core/SkRefCnt.h"
+#include "core/SkRefCnt.h"
 
 #include <vector>
 

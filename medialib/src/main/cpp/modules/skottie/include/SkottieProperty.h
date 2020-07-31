@@ -8,12 +8,12 @@
 #ifndef SkottieProperty_DEFINED
 #define SkottieProperty_DEFINED
 
-#include "../../include/core/SkColor.h"
-#include "../../include/core/SkPoint.h"
-#include "../../include/core/SkRefCnt.h"
-#include "../../include/core/SkTypeface.h"
-#include "../../include/utils/SkTextUtils.h"
-#include "../../modules/skottie/src/text/SkottieShaper.h"
+#include "core/SkColor.h"
+#include "core/SkPoint.h"
+#include "core/SkRefCnt.h"
+#include "core/SkTypeface.h"
+#include "utils/SkTextUtils.h"
+#include "../../skottie/src/text/SkottieShaper.h"
 
 #include <functional>
 

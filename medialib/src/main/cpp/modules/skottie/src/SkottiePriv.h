@@ -8,16 +8,16 @@
 #ifndef SkottiePriv_DEFINED
 #define SkottiePriv_DEFINED
 
-#include "../../modules/skottie/include/Skottie.h"
+#include "../../skottie/include/Skottie.h"
 
-#include "../../include/core/SkFontStyle.h"
-#include "../../include/core/SkString.h"
-#include "../../include/core/SkTypeface.h"
-#include "../../include/private/SkTHash.h"
-#include "../../include/utils/SkCustomTypeface.h"
-#include "../../modules/skottie/include/SkottieProperty.h"
-#include "../../modules/skottie/src/animator/Animator.h"
-#include "../../modules/sksg/include/SkSGScene.h"
+#include "core/SkFontStyle.h"
+#include "core/SkString.h"
+#include "core/SkTypeface.h"
+#include "private/SkTHash.h"
+#include "utils/SkCustomTypeface.h"
+#include "../../skottie/include/SkottieProperty.h"
+#include "../../skottie/src/animator/Animator.h"
+#include "SkSGScene.h"
 #include "../../utils/SkUTF.h"
 
 #include <vector>

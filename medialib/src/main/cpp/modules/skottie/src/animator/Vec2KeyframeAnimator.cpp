@@ -5,11 +5,11 @@
  * found in the LICENSE file.
  */
 
-#include "../../include/core/SkContourMeasure.h"
-#include "../../modules/skottie/src/SkottieJson.h"
-#include "../../modules/skottie/src/SkottieValue.h"
-#include "../../modules/skottie/src/animator/Animator.h"
-#include "../../modules/skottie/src/animator/KeyframeAnimator.h"
+#include "core/SkContourMeasure.h"
+#include "../../skottie/src/SkottieJson.h"
+#include "../../skottie/src/SkottieValue.h"
+#include "../../skottie/src/animator/Animator.h"
+#include "../../skottie/src/animator/KeyframeAnimator.h"
 
 #include <cmath>
 

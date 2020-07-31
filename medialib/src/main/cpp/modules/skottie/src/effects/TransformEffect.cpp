@@ -5,12 +5,12 @@
  * found in the LICENSE file.
  */
 
-#include "../../modules/skottie/src/effects/Effects.h"
+#include "../../skottie/src/effects/Effects.h"
 
-#include "../../modules/skottie/src/SkottieJson.h"
-#include "../../modules/skottie/src/Transform.h"
-#include "../../modules/sksg/include/SkSGOpacityEffect.h"
-#include "../../modules/sksg/include/SkSGTransform.h"
+#include "../../skottie/src/SkottieJson.h"
+#include "../../skottie/src/Transform.h"
+#include "SkSGOpacityEffect.h"
+#include "SkSGTransform.h"
 
 namespace skottie {
 namespace internal {

@@ -8,11 +8,11 @@
 #ifndef SkottieComposition_DEFINED
 #define SkottieComposition_DEFINED
 
-#include "../../modules/skottie/src/SkottiePriv.h"
+#include "../../skottie/src/SkottiePriv.h"
 
-#include "../../include/private/SkTArray.h"
-#include "../../include/private/SkTHash.h"
-#include "../../modules/skottie/src/Layer.h"
+#include "private/SkTArray.h"
+#include "private/SkTHash.h"
+#include "../../skottie/src/Layer.h"
 
 namespace skottie {
 namespace internal {

@@ -8,12 +8,12 @@
 #ifndef SkottieTransform_DEFINED
 #define SkottieTransform_DEFINED
 
-#include "../../include/core/SkM44.h"
-#include "../../include/core/SkMatrix.h"
-#include "../../include/core/SkPoint.h"
-#include "../../modules/skottie/src/Adapter.h"
-#include "../../modules/skottie/src/SkottieValue.h"
-#include "../../modules/sksg/include/SkSGTransform.h"
+#include "core/SkM44.h"
+#include "core/SkMatrix.h"
+#include "core/SkPoint.h"
+#include "../../skottie/src/Adapter.h"
+#include "../../skottie/src/SkottieValue.h"
+#include "SkSGTransform.h"
 
 namespace skjson {
 

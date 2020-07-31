@@ -5,21 +5,21 @@
  * found in the LICENSE file.
  */
 
-#include "../../modules/skottie/src/layers/shapelayer/ShapeLayer.h"
+#include "../../skottie/src/layers/shapelayer/ShapeLayer.h"
 
-#include "../../include/core/SkPath.h"
-#include "../../modules/skottie/src/SkottieJson.h"
-#include "../../modules/skottie/src/SkottiePriv.h"
-#include "../../modules/skottie/src/SkottieValue.h"
-#include "../../modules/sksg/include/SkSGDraw.h"
-#include "../../modules/sksg/include/SkSGGeometryEffect.h"
-#include "../../modules/sksg/include/SkSGGroup.h"
-#include "../../modules/sksg/include/SkSGMerge.h"
-#include "../../modules/sksg/include/SkSGPaint.h"
-#include "../../modules/sksg/include/SkSGPath.h"
-#include "../../modules/sksg/include/SkSGRect.h"
-#include "../../modules/sksg/include/SkSGRenderEffect.h"
-#include "../../modules/sksg/include/SkSGTransform.h"
+#include "core/SkPath.h"
+#include "../../skottie/src/SkottieJson.h"
+#include "../../skottie/src/SkottiePriv.h"
+#include "../../skottie/src/SkottieValue.h"
+#include "SkSGDraw.h"
+#include "SkSGGeometryEffect.h"
+#include "SkSGGroup.h"
+#include "SkSGMerge.h"
+#include "SkSGPaint.h"
+#include "SkSGPath.h"
+#include "SkSGRect.h"
+#include "SkSGRenderEffect.h"
+#include "SkSGTransform.h"
 #include "../../utils/SkJSON.h"
 
 #include <algorithm>

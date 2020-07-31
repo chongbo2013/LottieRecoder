@@ -8,8 +8,8 @@
 #ifndef SkottieShaper_DEFINED
 #define SkottieShaper_DEFINED
 
-#include "../../include/core/SkPoint.h"
-#include "../../include/utils/SkTextUtils.h"
+#include "core/SkPoint.h"
+#include "utils/SkTextUtils.h"
 
 #include <vector>
 
