@@ -17,21 +17,21 @@
 ** limitations under the License.
 */
 
-#include "../third_party/vulkan/vulkan/vk_platform.h"
-#include "../third_party/vulkan/vulkan/vulkan_core.h"
+#include "vk_platform.h"
+#include "vulkan_core.h"
 
 #ifdef VK_USE_PLATFORM_ANDROID_KHR
-#include "../third_party/vulkan/vulkan/vulkan_android.h"
+#include "vulkan_android.h"
 #endif
 
 
 #ifdef VK_USE_PLATFORM_IOS_MVK
-#include "../third_party/vulkan/vulkan/vulkan_ios.h"
+#include "vulkan_ios.h"
 #endif
 
 
 #ifdef VK_USE_PLATFORM_MACOS_MVK
-#include "../third_party/vulkan/vulkan/vulkan_macos.h"
+#include "vulkan_macos.h"
 #endif
 
 
@@ -54,13 +54,13 @@
 
 #ifdef VK_USE_PLATFORM_WIN32_KHR
 #include <windows.h>
-#include "../third_party/vulkan/vulkan/vulkan_win32.h"
+#include "vulkan_win32.h"
 #endif
 
 
 #ifdef VK_USE_PLATFORM_XCB_KHR
 #include <xcb/xcb.h>
-#include "../third_party/vulkan/vulkan/vulkan_xcb.h"
+#include "vulkan_xcb.h"
 #endif
 
 
